@@ -1,0 +1,71 @@
+version: "3.8"
+
+# There are symbolic links from the addons volume to the http volume.
+# It is important that these volumes are mounted in the same paths
+x-addon-volume:
+  &addon-volume
+  type: volume
+  source: addons
+  target: "/addons"
+
+x-http-volume:
+  &http-volume
+  type: bind
+  source: "${HTTP_FILES}"
+  target: "/files"
+
+services:
+
+  srb2kart:
+    image: formulabun/srb2kart:1.6.0
+    container_name: srb2kart
+    restart: unless-stopped
+    build:
+      dockerfile: Dockerfile.srb2kart
+    ports:
+      - "${KART_PORT}:${KART_PORT}/udp"
+    stop_signal: SIGKILL
+    command: -port ${KART_PORT} +http_source "${PUBLIC_IP}:5080"
+    stdin_open: true
+    tty: true
+    volumes:
+      - type: bind
+        source: "${KART_LUA_FILES}"
+        target: "/luafiles"
+      - type: bind
+        source: "${KART_CONFIG_FILES}"
+        target: "/configs"
+      - *addon-volume
+      - *http-volume
+
+  http_source:
+    image: busybox:1.36
+    container_name: http_source
+    restart: unless-stopped
+    ports:
+      - "${HTTP_PORT}:${HTTP_PORT}/tcp"
+    stop_signal: SIGKILL
+    command: httpd -f -v -p ${HTTP_PORT} -h /files
+    volumes:
+      - *http-volume
+
+  # add files from the repo volume to the addons file structure
+  add_file:
+    image: srb2kart_add_file
+    container_name: add_file
+    build:
+      dockerfile: Dockerfile.add
+    volumes:
+      - *addon-volume
+      - *http-volume
+
+  # open a shell with the file volumes for manual intervention
+  manual_file:
+    image: busybox:1.36
+    container_name: manual_file
+    volumes:
+      - *addon-volume
+      - *http-volume
+
+volumes:
+  addons:

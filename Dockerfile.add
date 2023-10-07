@@ -1,0 +1,8 @@
+FROM busybox:1.36
+
+VOLUME /addons
+VOLUME /files
+
+COPY add_file.sh .
+RUN chmod +x add_file.sh
+ENTRYPOINT ["./add_file.sh"]

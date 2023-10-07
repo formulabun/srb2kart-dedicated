@@ -1,0 +1,5 @@
+# don't add any files to the repo
+*
+# except these file
+!.gitignore
+!kartserv.cfg

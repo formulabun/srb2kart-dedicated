@@ -1,0 +1,4 @@
+# don't add any files to the repo
+*
+# except this file
+!.gitignore
