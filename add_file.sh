@@ -1,8 +1,7 @@
 #!/bin/sh
 
 print_usage() {
-  echo "\
-usage: add_file -map [files] -char [files] -mod [files] -custom num [files]
+  echo "usage: add_file -map [files] -char [files] -mod [files] -custom num [files]
 
 Add files to the srb2kart server. The files must be in the './files' directory.
 Files end up in numbered directories, eg: 20-maps, 40-chars and 60-mods.
@@ -17,7 +16,6 @@ and listed with \`add_files -ls\`
 }
 
 remove_files() {
-  # TODO remove more than one file at a time
   echo deleting:
   while [[ -n "$1" ]]
   do
