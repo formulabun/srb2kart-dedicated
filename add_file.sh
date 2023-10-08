@@ -13,7 +13,7 @@ To load hostmod first, run: \`add_file -custom 00 KL_HOSTMOD_V16.pk3\`
 Files can be removed with \`add_files -rm [files]\`
 and listed with \`add_files -ls\`
 "
-  exit 0
+  exit
 }
 
 remove_files() {
@@ -68,5 +68,3 @@ do
   esac
   shift
 done
-
-exit

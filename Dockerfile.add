@@ -4,4 +4,4 @@ VOLUME /addons
 VOLUME /files
 
 COPY add_file.sh /
-ENTRYPOINT ["sh", "/add_file.sh"]
+ENTRYPOINT ["sh", "./add_file.sh"]
