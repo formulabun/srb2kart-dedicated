@@ -54,7 +54,7 @@ First run the following command to know if you have installed everything properl
 docker compose --env-file srb2kart.env run add_file -h
 ```
 
-If that works, you can first copy you srb2kart addons to the `files/` directory (including `bonuschars.kart` if desired). Copying files can be done with [scp](https://man.openbsd.org/scp.1) or [winscp](https://winscp.net/eng/index.php).
+If that works, you can first copy you srb2kart addons to the `files/` directory (including `bonuschars.kart` if desired). Copying files can be done with [scp](https://man.openbsd.org/scp.1) or [winscp](https://winscp.net/eng/index.php). Important to note that the files must be immediately in the `files/` directory. Do not create any folders in here.
 
 Now that the files are available it is time to get them ready for the kart server. Do this by running:
 
