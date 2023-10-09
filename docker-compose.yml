@@ -37,6 +37,11 @@ services:
         target: "/configs"
       - *addon-volume
       - *http-volume
+    deploy:
+      resources:
+        reservations:
+          cpus: '0.2'
+          memory: 100M
 
   http_source:
     image: busybox:1.36

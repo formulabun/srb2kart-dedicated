@@ -98,6 +98,12 @@ This will spin up the dedicated srb2kart server and http file server on ports 50
 docker compose --env-file srb2kart.env ps
 ```
 
+### Get the logs
+
+```bash
+docker compose --env-file srb2kart.env logs srb2kart
+```
+
 ### Open a kart shell
 
 ```bash
@@ -119,3 +125,13 @@ Do this after changing the loaded addons. This command can be put in cron by run
 ```
 
 It will restart the server every night at 3am.
+
+### See resource usage
+
+```bash
+docker stats srb2kart
+```
+
+### Debugging issues
+
+see [debugging](./docs/debugging.md).
