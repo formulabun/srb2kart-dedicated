@@ -14,7 +14,7 @@ See [Getting a server](./docs/getting-a-server.md) for more info. Note down you 
 
 For the rest of this guide you need to open a shell to your server. This is most likely through [ssh](https://www.openssh.com/) directly or though an ssh client like [putty](https://putty.org/).
 
-On the server, install [Git ](https://git-scm.com/downloads)(one of the first three links), [Docker](https://docs.docker.com/engine/install/) and [Docker Desktop](https://docs.docker.com/compose/install/) (the plugin) using their respective guides.
+On the server, install [Git ](https://git-scm.com/downloads)(one of the first three links), [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) (the plugin) using their respective guides.
 
 ## 1 Cloning the repository
 
