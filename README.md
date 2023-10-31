@@ -118,7 +118,7 @@ Exit the shell by inputting `ctrl-p ctrl-q`. Typing exit or `ctrl-c` will stop t
 docker compose --env-file srb2kart.env restart srb2kart
 ```
 
-Do this after changing the loaded addons. This command can be put in cron by running `crontab -e` and adding the following line:
+Do this after changing the loaded addons. This command can be put in cron by first running `crontab -e`. It will open an editor where you can add the following line:
 
 ```
 00 3    * * * docker compose -f /path/to/docker-compose.yml --env-file /path/to/srb2kart.env restart
