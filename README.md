@@ -18,10 +18,10 @@ On the server, install [Git ](https://git-scm.com/downloads)(one of the first th
 
 ## 1 Cloning the repository
 
-Clone this repository using in the folder of your choice. You can add a foldername to clone the repo into.
+Clone this repository using in the folder of your choice. Then enter this derectory to run the next steps in.
 
 ```sh
-git clone https://github.com/formulabun/srb2kart-dedicated.git
+git clone https://github.com/formulabun/srb2kart-dedicated.git && cd srb2kart-dedicated
 ```
 
 ## 2 Configuring
