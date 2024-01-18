@@ -16,6 +16,12 @@ For the rest of this guide you need to open a shell to your server. This is most
 
 On the server, install [Git ](https://git-scm.com/downloads)(one of the first three links), [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) (the plugin) using their respective guides.
 
+After installing, run:
+```sh
+docker version ; docker compose version
+```
+This guide should work with docker version `24.*` and docker compose version `2.*`.
+
 ## 1 Cloning the repository
 
 Clone this repository using in the folder of your choice. Then enter this directory to run the next steps in.
